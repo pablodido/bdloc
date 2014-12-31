@@ -1,0 +1,148 @@
+/*******************reggister********************************/
+.formTitle{
+	background-color:skyblue;
+	text-align:center;
+	width:100%;
+}
+.formbody{
+	background-color:aquamarine;
+	height:400px;
+	margin-left:30%;
+	margin-top:30px;
+	padding-top:30px;
+	width:500px;
+}
+
+/*-------------------------- Credit Card -----------------------*/
+
+#bdloc_appbundle_creditcard {
+    padding-bottom: 50px;
+}
+
+#bdloc_appbundle_creditcard div label {
+    display: inline-block;
+    padding-right: 10px;
+    padding-top: 12px;
+    vertical-align: top;
+    text-align: right;
+    width: 250px;
+}
+
+#bdloc_appbundle_creditcard > div:nth-child(1) {
+    padding: 10px 0;
+}
+
+#bdloc_appbundle_creditcard #bdloc_appbundle_creditcard_abonnement {
+    margin-left: 10px;
+}
+
+#bdloc_appbundle_creditcard > div:nth-child(1) > label {
+    padding-top: 0px;
+    vertical-align: top;
+}
+
+#bdloc_appbundle_creditcard > div:nth-child(1) > div label {
+    display: inline-block;
+    padding-right: 0px;
+    margin-right: 20px;
+    padding-top: 2px;
+    width: 50px;
+}
+
+#bdloc_appbundle_creditcard input[type="text"],
+#bdloc_appbundle_creditcard > div > div > div {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 250px;
+}
+
+#bdloc_appbundle_creditcard > div:nth-child(6),
+#bdloc_appbundle_creditcard > div:nth-child(7) {
+    display: inline-block;
+}
+
+#bdloc_appbundle_creditcard > div:nth-child(7) label {
+    display: inline-block;
+    padding-right: 5px;
+    width: 5px;
+}
+
+#bdloc_appbundle_creditcard #bdloc_appbundle_creditcard_creditCardLastName,
+#bdloc_appbundle_creditcard #bdloc_appbundle_creditcard_creditCardFirstName {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 112px;
+}
+
+#bdloc_appbundle_creditcard select {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 80px;
+}
+
+/*#bdloc_appbundle_creditcard select option {
+    text-align: center;
+}*/
+
+#bdloc_appbundle_creditcard > div > div,
+#bdloc_appbundle_creditcard ul {
+    display: inline-block;
+}
+
+#bdloc_appbundle_creditcard ul {
+    color: #f00;
+    list-style: none;
+}
+
+#bdloc_appbundle_creditcard button[type="submit"] {
+    margin: 5px 10px 5px 260px;
+    padding: 5px;
+}
+
+#bdloc_appbundle_creditcard_expirationDate_day {
+    visibility: hidden;
+}
+
+#presentation2 {
+    background: rgba(39, 41, 40, 0.95); /*#272928;*/
+    border: 2px solid #fe8e2b;
+    color: #fff;
+    line-height: 1.5em;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 600px;
+    margin-top: -95px;
+    padding: 20px;
+    width: 350px;
+}
+
+#presentation2 ul li {
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+#presentation2 .orange {
+    color: #fe8e2b;
+}
+
+#presentationAbo {
+    margin-left: 150px;
+}
+
+#choixAbo{
+    margin: 10px 30px 20px;
+}
+
+#cout {
+    color: #272928;
+    margin: 20px 0 10px 20px;
+}
+
+#prix {
+    margin: 5px 0 5px 10px;
+    padding: 5px 0 5px 5px;
+}

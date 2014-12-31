@@ -1,0 +1,33 @@
+
+{% block title %}Bdthèque | Page personnel{% endblock %}
+
+{% block header %}
+
+<!-- /*********************************	HEADER *********************************/ -->
+        <div class="top">
+            <a href="catalogue.html">
+            	<div id="logo">
+                <!-- <h1>BdLoc</h1> -->
+            	</div>
+            </a>
+            <div id="nav">
+                <span>
+                    {% if app.user %}
+                        <strong>Bonjour,{{app.user.username }}</strong>!
+                        <a href="{{ path('logout') }}"><img src="{{ asset('img/croix_fermeture.png')}}" height="25px" width="25px" title="Deconnectez vous"></a>
+                        {% else %}
+                        Bonjour inconnu
+                        <a href="{{ path('bdloc_app_security_login') }}" title="Connectez-vous">Connexion</a>
+                        <a href="{{ path('bdloc_app_user_register') }}" title="Inscrivez-vous">Inscription</a>
+                {% endif %}
+                
+                </span>
+                <span>
+                    <a href="{{ path('bdloc_app_default_basket')}}"><img src="{{ asset('img/Cart.png')}}" height="25px" width="25px" title="Voir mon Panier"></a>
+                </span>
+                <span>
+                      <a href="{{ path('bdloc_app_default_historic')}}">Historique</a>  
+                </span>
+            </div>
+        </div>
+{% endblock %}

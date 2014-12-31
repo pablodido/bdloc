@@ -1,0 +1,12 @@
+{% extends '::base.html.twig' %}
+{% block title %}Bdthèque | Page personnel{% endblock %}
+
+{% block body %}
+{% include "::header.html.twig" %}
+{% include "::aside.html.twig" %}
+   
+{% include "::book/content.html.twig"%}
+
+{% include "::footer.html.twig" %} 
+{% endblock %}
+

@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+{% block title %}Bdthèque | Détails de la BD{% endblock %}
+{% block body %}	
+{% block header %}
+
+<!-- /*********************************	HEADER *********************************/ -->
+        <div class="top">
+            <a href="catalogue.html">
+            	<div id="logo">
+                <!-- <h1>BdLoc</h1> -->
+            	</div>
+            </a>
+            <div id="nav">
+                <span>
+                    <a href="#"><strong>Bonjour, {{app.user.username}}</a>
+                </span>
+            </div>
+        </div>
+{% endblock %}
+
+	<div class="recappanier">
+		<div class="titrepanier">Confirmation de votre commande</div>
+			<table>
+				<thead>
+					<tr>
+						<th>Horaire de livraison</th>
+						<th>Adresse de livraison</th>
+						<th>Nombre de BD commandés</th>
+					</tr>
+				</thead>
+			
+				<tbody>
+					<tr>
+						<th></th>
+						<td>
+							<p>{{dropspot.Address}}</p>
+							 <a class="retourliste" href="{{ path('bdloc_app_default_index')}}">Modifier l'adresse
+							 </a> 
+						</td>
+						<td>
+							<a class="retourliste" href="{{ path('bdloc_app_default_basket')}}">Revoir la liste</a> 
+    					</td>
+					</tr>
+				</tbody>
+			
+			</table>
+			<form class="validerdetail">
+	             <input type="submit"  value="valider votre commande!">
+	        </form>
+	        <a class="retourliste" href="{{ path('bdloc_app_default_index')}}">Retour à la liste</a> 
+	</div>
+{% include "::footer.html.twig" %}		
+{% endblock %}

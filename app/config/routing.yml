@@ -1,0 +1,16 @@
+bdloc_user:
+    resource: "@BdlocAppBundle/Controller/UserController.php"
+    type:     annotation
+    prefix:   /
+
+
+bdloc_app:
+    resource: "@BdlocAppBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
+login_check:
+    path:    /login_check
+logout:
+    path:    /logout

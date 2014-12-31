@@ -1,0 +1,51 @@
+{% extends '::base.html.twig' %}
+{% block title %} Enregistrez votre carte !{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
+{% endblock %}
+{% block body %}
+<div id="menuAbonnement">
+        <ul>
+            <li {% if app.request.getPathInfo == '/abonnement/inscription' %} class="etapeActive" {% endif %}>1.Informations personnelles</li>
+            <li {% if app.request.getPathInfo == '/abonnement/choix-point-relais' %} class="etapeActive" {% endif %}>2.Choix du point relais</li>
+            <li {% if app.request.getPathInfo == '/abonnement/choix-de-paiement' %} class="etapeActive" {% endif %}>3.Choix du mode d'abonnement et paiement</li>
+        </ul>
+<h1 class="formTitle">Abonnement | Choix du paiement- Step 3/3</h1>
+	<div id="flash-messages">
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+            <div class="flash-notice">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+        {% for flashMessage in app.session.flashbag.get('error') %}
+            <div class="flash-error">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+    </div>
+    <div id="presentation2">
+        <h2>Mode d'abonnement</h2>
+        <h3 class="orange">Tarifs :</h3>
+        <ul>
+            <li>L’abonnement mensuel coûte le prix d’une seule BD : <span class="orange">12€</span> TTC.</li> 
+            <li>Un abonnement annuel permet d’économiser 2 mois : <span class="orange">120€</span> TTC.</li>
+        </ul>
+    </div>
+    <div id="presentationAbo">
+        <h2>Choisissez votre type d'abonnement</h2>
+        <!-- <div id="choixAbo">
+            <label><input type="radio" name="abonnement" value="mensuel">Mensuel</label>
+            <label><input type="radio" name="abonnement" value="annuel" checked="checked">Annuel</label>
+        </div>
+        <p id="cout">Coût débité   <strong><span id="prix">120</span> €</strong></p> -->
+        <p id="cout">Coût débité<strong><span id="prix">120,00</span> €</strong></p>
+    </div>
+   {{ form(CreditcardsForm, {'attr': {'novalidate': 'novalidate'}}) }}
+
+{% endblock %}    
+{% block javascripts %}
+{{ parent() }}
+<script src="{{ asset('js/payment.js') }}"></script>
+<script src="//maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+{% endblock %}

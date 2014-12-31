@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}BD Location{% endblock %}</title>
+        {% block stylesheets %}
+             <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css"/>
+             <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('faviconBdloc.ico') }}" />
+    </head>
+    <body>
+
+        {% block body %}
+            <h1>BDloc</h1>
+             {# Bonjour, {{app.user.username}}! #}
+           {#  <a href="{{path('logout')}}" title="Déconnectez vous">Déconnexion</a> #}
+              Bonjour inconnu
+            {# <a href="{{path('guili_app_security_login')}}" title="connectez vous">Connexion</a> #}
+
+            {# <a href="{{path('guili_app_user_register')}}" title="Inscrivez-vous">inscription</a> #}
+
+        {% endblock %}
+        {% block javascripts %}
+            <script src="{{asset('js/jquery.js')}}"></script>
+            <script src="{{asset('js/popupbd.js')}}"></script>
+            <script type="text/javascript" src="https://getfirebug.com/firebug-lite.j"></script>
+        {% endblock %}
+    </body>
+</html>

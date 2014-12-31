@@ -1,0 +1,19 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Bdloc | Accueil{% endblock %}
+
+{% block body %}
+
+
+    <!-- { { render(controller('BdlocAppBundle:CronJob:checkCartTiming')) }} -->
+    <h1 class="center">La plateforme de location multi bandes dessinées</h1>
+    <div class='envelopconnexion'>Abonné? <a href="{{ path('bdloc_app_security_login') }}" class='btnconnexion' title="Connectez-vous">Connexion</a></div>
+    <div id="fond"></div>
+    <div id="presentation">
+        <p>Accédez à une <span class="big">multitude de BDs</span> en quelques clics !</p>
+        <p>BDloc vous permet de récupérer vos BDs préférées pour 2 semaines dans un point relais de votre choix (Paris pour l'instant).</p>
+        <p><span class="offre">Offre inédite :</span> abonnement mensuel de 12€ ou annuel de 120€ pour une lecture illimitée.</p>
+        <a href="{{ path('bdloc_app_user_register') }}" id="abo"><img src="{{ asset("img/abo1.png") }}" alt="s'abonner"/></a>
+    </div>
+    
+{% endblock %}

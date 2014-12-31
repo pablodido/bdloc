@@ -1,0 +1,17 @@
+
+
+{% block footer %}
+<!-- /********************************* FOOTER *********************************/ -->
+        <footer>
+            <div id="footer">
+                <a href="sitemap.html">PLAN DU SITE</a>
+                <a href="faq.html">F.A.Q</a>
+                <a href="whoweare.html">QUI SOMMES NOUS</a>
+                <a href="contact.html">NOUS CONTACTER</a>
+                <a href="{{ path('bdloc_app_default_sedesabonner') }}">SE DESABONNER</a>
+            </div>
+            <div id="copy">&copy; Copyright APC.Web & PABLODIDOWEB- {{"now"|date("Y")}}</div>
+        </footer>
+    </body>
+</html>
+{% endblock %}

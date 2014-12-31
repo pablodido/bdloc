@@ -1,0 +1,36 @@
+{% extends '::base.html.twig' %}
+{% block title %}Bdthèque | Détails de la BD{% endblock %}
+
+{% block body %}
+{% include "::header.html.twig" %}
+<fieldset>
+<legend>Mon historique de location. Mes 5 dernières commandes sur BDLOC !</legend>
+</fieldset>
+
+<div class="col-md-6">
+    <div class="form-group">
+        <div class="profile">
+{% for cart  in carts %}
+            <fieldset>
+                <legend> Commande N° {{ cart.id }} du {{ cart.dateModified|date('d-m-Y' ~ ' à ' ~ 'H:m:s') }}</legend>
+            </fieldset>
+            <p> Nombre de bds commandées : {{cart.cartItems|length}}</p>
+<div class="table-responsive">
+<table class="table table-hover">
+{% for cartItem in cart.cartItems %}
+            <tr>
+
+            <td><img src="{{ asset('cover/')}}{{ cartItem.book.cover }}" alt="{{ cartItem.book.title}}" title="{{ cartItem.book.title}}" width=70px height=100px/></td>
+
+             <td>{{ cartItem.book.title}}</td>
+{% endfor %}
+</table>
+</div>
+
+{% endfor %}
+        </div>
+    </div>
+</div>
+<a class="retour" href="{{ path('bdloc_app_default_index')}}">Retour à la liste</a>
+{% include "::footer.html.twig" %} 
+{% endblock %}

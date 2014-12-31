@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+{% block title %}Bdthèque | Détails de la BD{% endblock %}
+{% block body %}	
+{% block header %}
+
+<!-- /*********************************	HEADER *********************************/ -->
+        <div class="top">
+            <a href="catalogue.html">
+            	<div id="logo">
+                <!-- <h1>BdLoc</h1> -->
+            	</div>
+            </a>
+            <div id="nav">
+                <span>
+                    <a href="#"><strong>Bonjour, {{app.user.username}}</a>
+                </span>
+            </div>
+        </div>
+{% endblock %}
+
+	<div class="recappanier">
+		<div class="titrepanier">Recapitulatif de votre panier</div>
+			<table>
+				<thead>
+					<tr>
+						<th>Couverture BD</th>
+						<th>Title</th>
+						<th>Retirer du panier</th>
+					</tr>
+				</thead>
+				{% for cartItem in cart.cartItems %}
+				<tbody>
+					<tr>
+						<th><img class="imagedetail"src="{{ asset('cover/')}}{{ cartItem.book.cover }}"title="bd one" width="150px" height="150px"></th>
+						<td>{{cartItem.book.title}}</td>
+						<td>
+			        		<a href="{{ path('bdloc_app_cart_deleteitem',{'id':cartItem.id, "idbook":cartItem.book.id})}}" title="Ajouter au panier">Retirer</a>
+    					</td>
+					</tr>
+				</tbody>
+				{% endfor %}
+			</table>
+	        <a href="{{ path('bdloc_app_user_pointrelais') }}" title="Confirmer votre commande">Confirmer votre commande!</a><br>
+	        <a class="retourliste" href="{{ path('bdloc_app_default_index')}}">Retour à la liste</a> 
+	</div>
+{% include "::footer.html.twig" %}		
+{% endblock %}	

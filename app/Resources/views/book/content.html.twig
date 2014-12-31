@@ -1,0 +1,60 @@
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{ asset("css/catalogue.css") }}">
+{% endblock %}
+
+{% block main %}
+  <!-- /********************************* MAIN CONTENT *********************************/ -->
+ 
+	 	<div class="result">
+	        <h2>Résultats</h2>
+	        <form class="select">
+	            <select>
+	                <option>Trier par...</option>
+	                <option>categorie</option>
+	                <option>disponibilité</option>
+	                <option>date d'ajout</option>
+	                <option>ordre alphabétique</option>
+	                <option>date de publication</option>
+	            </select>
+	            <select>
+	                <option>afficher 20 résultats</option>
+	                <option>afficher 40 résultats</option>
+	                <option>afficher 60 résultats</option>
+	            </select>
+	            <input type="submit" value ="afficher">
+	        </form>
+	        
+	        {# display navigation #}
+
+	        <div class="pagination"> 
+	        	{{knp_pagination_render(pagination)}} 
+	        </div>
+	       
+	    </div>
+	    <div class="affichagelayout">
+	    {% for book in pagination %}
+		    <div class="affichageBd">
+		       {% for flashMessage in app.session.flashbag.get('notice') %}
+		            <div class="flash-notice">
+		                {{ flashMessage }}
+		            </div>
+				{% endfor %}            
+		        <div class="bd1">
+		            <img class="imagedetail"src="{{ asset('cover/')}}{{ book.cover }}"title="bd one">
+		        </div>
+		        <div class="detailBd">
+		           
+		       		 <h3>{{book.title}}</h3>
+		            
+			        <div class="stock">Stock: {{book.stock}}</div>
+			        <div class="buttondetail">
+			       		 <a href="{{path('bdloc_app_default_detail',{'id':book.id})}}" class="plusdetail" title="Plus de détails">Plus d'infos</a><br>
+				    </div>    
+				    <div>	
+				        <a href="{{ path('bdloc_app_default_addbook',{'id':book.id})}}" title="Ajouter au panier">Ajouter au panier</a>
+				    </div>    
+		   		</div>
+		   	</div> 	
+   		{% endfor %}
+   		</div>	
+{% endblock %}

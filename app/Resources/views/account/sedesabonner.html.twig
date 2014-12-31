@@ -1,0 +1,35 @@
+{% extends '::base.html.twig' %}
+{% block title %}Bdthèque | Détails de la BD{% endblock %}
+{% block body %}	
+{% block header %}
+
+<!-- /*********************************	HEADER *********************************/ -->
+        <div class="top">
+            <a href="catalogue.html">
+            	<div id="logo">
+                <!-- <h1>BdLoc</h1> -->
+            	</div>
+            </a>
+            <div id="nav">
+                <span>
+                    <strong>{{app.user.username }}</strong>, vous êtes sur la page désabonnement!
+                </span>
+            </div>
+        </div>
+{% endblock %}
+
+<div class="recappanier">
+	<p class="desabonner">Etes-vous sûr de nous quitter?</p>
+	<p>Merci de nous faire part des raisons qui vous pousse à nous quitter:<p/>
+	<form>
+		<textarea >
+		</textarea>
+	
+	<p>Continuer à profiter de nos nombreux avantages!<br> sinon n'hésitez pas à revenir chez nous et à la prochaine!</p>
+	
+        <input type="submit"  value="se désabonner">
+    </form>
+    <a class="pageaccueil" href="{{ path('bdloc_app_default_index')}}">Retour à la liste</a> 
+</div>
+{% include "::footer.html.twig" %}		
+{% endblock %}

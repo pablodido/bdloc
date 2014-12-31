@@ -1,0 +1,347 @@
+
+
+/***************************container***********************/
+.top{
+    background-color: skyblue;
+    border:1px solid #000;
+    height: 150px;
+    width:auto;
+}
+#nav{
+    float:right;
+    clear:both;
+    margin-top:20px;
+    height: 190px;
+}
+#nav span a{
+    color: #fff;
+    font-size: 20px;
+    padding-right:5px;
+    text-decoration: none;
+}
+h1{
+    display:inline-block;
+    width:100px;
+}
+
+button{
+    width:150px;
+}
+
+
+/*********************home page non abonné**************/
+.envelopconnexion{
+  float:right;
+  margin-right:15%;
+}
+.btnconnexion{
+    border: 1px solid rgba(13, 12, 12, 0.16);
+    background-color: #337ab7;
+    border-radius: 10px;
+    color: #fff;
+    padding: 4px;
+    text-decoration: none
+}
+.btnconnexion:hover{
+  background-color: #337ab7;
+  color: #fff;
+  text-decoration: none
+}
+h1.center {
+    text-align: center;
+    width:100%;
+}
+
+#main {
+    overflow: hidden;
+}
+
+#flash-messages {
+    min-height: 30px;
+    padding: 5px;
+    text-align: center;
+}
+
+.flash-notice {
+    background: #272928;
+    color: #fff;
+    /*color: #00f;*/
+    padding: 3px 0;
+}
+
+.flash-error {
+    /*background: #272928;
+    color: #fe8e2b;*/
+    color: #f00;
+    padding: 3px 0;
+}
+
+.login_error {
+    /*background: #272928;
+    color: #fe8e2b;*/
+    color: #f00;
+    display: inline-block;
+}
+
+#fond {
+    background: url(../img/planche1.png) no-repeat 0 0;
+    height: 424px;
+    margin: 0 auto 50px;
+    opacity: 0.3;
+    position: relative;
+    /*padding-top: 50px;*/
+    width: 600px;
+}
+
+#presentation {
+    background: rgba(39, 41, 40, 0.95); /*#272928;*/
+    border: 2px solid #fe8e2b;
+    color: #fff;
+    line-height: 1.5em;
+    /*height: 230px;*/
+    /*margin: 50px auto 0;*/
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -115px;
+    padding: 20px;
+    width: 500px;
+}
+
+#presentation p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#presentation .big {
+    font-size: 1.4em;
+}
+
+#presentation .offre {
+    color: #fe8e2b;
+}
+
+#abo {
+    display: inline-block;
+    height: 55px;
+    margin: 10px 0 0 85px;
+    width: 281px;
+}
+
+#abo img:hover {
+    -webkit-animation: bouge 1s 0s linear;
+}
+
+@-webkit-keyframes bouge {
+    0% {
+        transform: translateX(0px);
+    }
+    25% {
+        transform: translateX(20px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+    75% {
+        transform: translateX(-20px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+/***********************page detail bd**********************/
+.identity{
+  background-color: aquamarine;
+  float: left;
+  height: auto;
+  width: 500px;
+}
+.affichageBddetail{
+    background-color: mediumaquamarine;
+    border: 1px solid #000;
+    width: 728px;
+    height: auto;
+    float: left;
+    margin-left: 80px;
+    margin-bottom: 100px;
+    margin-top:80px;
+}
+.bd1{
+    float: left; 
+}
+.bd1 img{
+    width: 190px;
+    height: 300px;
+    margin: 9px;
+}
+.detailBddetail{
+    width: auto
+    height: auto;
+    float:left;
+    padding-left:5px;
+    margin-bottom:10px;
+}
+.buttonadd{
+    background-color: #337ab7;
+    border-radius: 10px;
+    color:#fff;
+}
+
+.ajouterdetail{
+    
+    float:left;
+    margin-top:5px;
+    margin-bottom:10px;
+    display: inline-block;
+}
+
+.detailBddetail p{
+    margin-top: 0px;
+    margin-bottom: 0px
+}
+.detailBddetail p:first-child{
+   font-weight:bold;
+   text-transform: uppercase;
+   text-decoration: underline;
+}
+.stockdetail{
+    color: red; 
+    font-weight: bold;
+    font-size: 20px;
+    float: left;
+    padding-left: 81px;
+    width: 318px;
+    margin-bottom: 10px;
+}
+.auteur{
+     float:left;
+     padding-top:5px;
+     padding-bottom:5px;
+     padding-left:10px;
+     width:150px;
+     height:auto;
+}
+
+.coloriste{
+     float:left;
+     padding-top:5px;
+     padding-bottom:5px;
+     padding-left:10px;
+     width:150px;
+     height:auto;
+
+}
+.scenariste{
+     float:left;
+     padding-top:5px;
+     padding-bottom:5px;
+     padding-left:10px;
+     width:150px;
+     height:auto;
+}
+.serie{
+    padding-top: 195px;
+    padding-bottom: 9px;
+    padding-left: 10px;
+    background-color: honeydew;
+}
+.Bd{
+    background-color: lightblue; 
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:10px; 
+     
+}
+.retour{
+    background-color: #337ab7;
+    border-radius: 10px;
+    color:#fff;
+    display: inline-block;
+    margin-left: 60px;
+    margin-top: 5px;
+    padding:2px;
+    text-decoration: none;
+    border: 1px solid rgba(13, 12, 12, 0.16);
+}
+.retour:hover{
+  color:#fff;
+  text-decoration: none;
+}
+/***************footer****************/
+footer{
+    clear: both;
+    padding-top: 5px;
+    bottom: 0;
+    width: 100%;
+    background-color: skyblue;
+}
+#footer{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#footer a:first-child{
+    padding-left: 300px;
+}
+#footer a{
+    color:#fff;
+    padding-left:30px;
+}
+#copy{
+    padding-top: 10px;
+    padding-left:400px;
+}
+/******************recappanier**********************/
+.recappanier{
+    width:auto;
+    height:auto;
+    background-color: #ccc;
+    padding-bottom: 30px
+}
+.recappanier table{
+    margin:auto;
+
+}
+.recappanier table th,td{
+    border:1px solid #000;
+     padding:5px;
+}
+.titrepanier{
+    font-weight:bold;
+    font-size:20px;
+    text-align: center;
+    padding-top:5px;
+    margin-bottom:5px;
+}
+.retirerdetail1{
+    float:right;
+}
+.validerdetail{
+    padding-left: 222px;
+}
+.retourliste{
+    display:inline-block;
+    float:left;
+}
+/******************se desabonner**********************/
+.recappanier textarea{
+    width:450px;
+    height:200px;
+}
+.recappanier{
+    padding-left: 400px;
+}
+.desabonner{
+    font-weight: bold;
+    font-size: 20px;
+}
+.pageaccueil{
+    text-decoration: none;
+    display: inline-block;
+    background-color: aliceblue;
+    float: right;
+    margin-bottom: 8px;
+    padding: 6px;
+}

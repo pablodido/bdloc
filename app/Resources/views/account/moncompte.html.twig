@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+
+<!-- Début du code -->
+<html>
+    <!-- Début En-tête -->
+    <head>
+        <meta charset="UTF-8">
+            <title>WF3 - Formation - PROJET FINAL - BDLOC</title>
+            <link rel="stylesheet" href="files/css/style.css">
+            <LINK REL="SHORTCUT ICON" href="favicon.ico">
+    </head>
+    <!-- Fin En-tête -->
+
+    <!--Début Body -->
+    <body>
+    	<!-- /*********************************	HEADER *********************************/ -->
+        <div class="container">
+            <a href="catalogue.html">
+            	<div id="logo">
+                <!-- <h1>BdLoc</h1> -->
+            	</div>
+            </a>
+            <div id="nav">
+                <span>
+                    <a href="login.html"><img src="files/icons/login.png" height="25px" width="25px" title="Connectez-vous"></a>
+                    <a href="Register/register.html"><img src="files/icons/register.png" height="25px" width="25px" title="Enregistrez-vous"></a>
+                    <!-- <a href="#"><strong>Bonjour, USER!</strong>
+                    <img src="files/icons/logout.png" height="25px" width="25px" title="Deconnectez vous"></a> -->
+                </span>
+                <span>
+                    <strong><a href="catalogue.html">CATALOGUE</a></strong>
+                </span>
+                <span>
+                    <strong><a href="fonctionnement.html">FONCTIONNEMENT</a></strong>
+                </span>
+                <span>
+                    <a href="reglog.html"><img src="files/icons/Cart.png" height="25px" width="25px" title="Voir mon Panier"></a>
+                </span>
+            </div>
+        </div>
+
+        <!-- /*********************************	FILTRES *********************************/ -->
+
+        <div class="filtre">
+            <h2>Recherche</h2>
+                <input type="text" placeholder="mots-clefs">
+                <input type="submit" value="ok">
+
+            <h2>Catégories</h2> <!-- BDD Cat -->
+                <label><input type="checkbox">Polar</label><br>
+                <label><input type="checkbox">Historique</label><br>
+                <label><input type="checkbox">Tranche de vie</label><br>
+                <label><input type="checkbox">Aventure</label><br>
+                <label><input type="checkbox">Jeunesse</label><br>
+                <label><input type="checkbox">Fantastique</label><br>
+
+            <h2>Disponibilité</h2> <!-- Status -->
+                <label><input type="checkbox">Disponibles</label><br>
+                <label><input type="checkbox">Indisponibles</label><br>
+		</div>
+
+		<!-- /********************************* RESULTS *********************************/ -->
+
+        <div class="result">
+            <h2>Résultats</h2>
+            <div class="select">
+                <select>
+                    <option>Trier par...</option>
+                    <option>categorie</option>
+                    <option>disponibilité</option>
+                    <option>date d'ajout</option>
+                    <option>ordre alphabétique</option>
+                    <option>date de publication</option>
+                </select>
+                <select>
+                    <option>afficher 20 résultats</option>
+                    <option>afficher 40 résultats</option>
+                    <option>afficher 60 résultats</option>
+                </select>
+            </div>
+            <div id="compteur">
+                <a class="left"><img src="files/icons/prev.png" height="35" width="35" alt="previous page" /></a>
+                <div class="compteur"></div>
+                <a class="right"><img src="files/icons/next.png" height="35" width="35" alt="next page" /></a>
+            </div>
+        </div>
+
+            <!-- /********************************* MAIN CONTENT *********************************/ -->
+        <div id="mainContent"> 
+            <div class="affichageBd">
+                <div class="bd1">
+                    <img class="imagedetail"src="files/115618_c.jpg" height="695" width="500"title="bd one">
+                </div>
+                <div class="detailBd">
+                    <h3>TITRE DE LA BD</h3>
+                    <p>Auteur</p>
+                    <p>Coloriste</p>
+                    <p>Scénariste</p>
+                    <div class="stock">2 Disponibles</div>
+                    <button class="plusdetail">Plus de détails !</button><br>
+                    <button>Ajouter au panier !</button>
+                </div>
+            </div>
+            <div class="affichageBd">
+                <div class="bd1">
+                    <img class="imagedetail"src="files/115618_c.jpg" height="695" width="500"title="bd one">
+                </div>
+                <div class="detailBd">
+                    <h3>TITRE DE LA BD</h3>
+                    <p>Auteur</p>
+                    <p>Coloriste</p>
+                    <p>Scénariste</p>
+                    <div class="stock">Stock limité</div>
+                    <button class="plusdetail">Plus de détails !</button><br>
+                    <button>Ajouter au panier !</button>
+                </div>
+            </div>
+            <div class="affichageBd">
+                <div class="bd1">
+                    <img class="imagedetail"src="files/115618_c.jpg" height="695" width="500"title="bd one">
+                </div>
+                <div class="detailBd">
+                    <h3>TITRE DE LA BD</h3>
+                    <p>Auteur</p>
+                    <p>Coloriste</p>
+                    <p>Scénariste</p>
+                    <div class="stock">En Stock</div>
+                    <button class="plusdetail">Plus de détails !</button><br>
+                    <button>Ajouter au panier !</button>
+                </div>
+            </div>
+            <div class="affichageBd">
+                <div class="bd1">
+                    <img class="imagedetail"src="files/115618_c.jpg" height="695" width="500"title="bd one">
+                </div>
+                <div class="detailBd">
+                    <h3>TITRE DE LA BD</h3>
+                    <p>Auteur</p>
+                    <p>Coloriste</p>
+                    <p>Scénariste</p>
+                    <div class="stock">Plus qu'un en STOCK</div>
+                    <button class="plusdetail">Plus de détails !</button><br>
+                    <button>Ajouter au panier !</button>
+                </div>
+            </div>
+            <div class="affichageBd">
+                <div class="bd1">
+                    <img class="imagedetail"src="files/115618_c.jpg" height="695" width="500"title="bd one">
+                </div>
+                <div class="detailBd">
+                    <h3>TITRE DE LA BD</h3>
+                    <p>Auteur</p>
+                    <p>Coloriste</p>
+                    <p>Scénariste</p>
+                    <div class="stock">Stock Limité</div>
+                    <button class="plusdetail">Plus de détails !</button><br>
+                    <button>Ajouter au panier !</button>
+                </div>
+            </div>
+            <div class="affichageBd">
+                <div class="bd1">
+                    <img class="imagedetail"src="files/115618_c.jpg" height="695" width="500"title="bd one">
+                </div>
+                <div class="detailBd">
+                    <h3>TITRE DE LA BD</h3>
+                    <p>Auteur</p>
+                    <p>Coloriste</p>
+                    <p>Scénariste</p>
+                    <div class="stock">Indisponible</div>
+                    <button class="plusdetail">Plus de détails !</button><br>
+                    <button>Ajouter au panier !</button>
+                </div>
+            </div>
+        	<div id="details">
+			    <img class="imagedetail"src="files/115618_c.jpg" height="400" width="280"title="bd one">
+				<h3>titre de la bd</h3>
+			    <p>auteur</p>
+			    <p>coloriste</p>
+			    <p>scénariste</p>
+			    <div class="stock">3 disponibles</div>
+		    </div>
+		</div>
+		<!-- /********************************* FOOTER *********************************/ -->
+        <footer>
+            <div id="footer">
+                <a href="sitemap.html">PLAN DU SITE</a>
+                <a href="faq.html">F.A.Q</a>
+                <a href="whoweare.html">QUI SOMMES NOUS</a>
+                <a href="contact.html">NOUS CONTACTER</a>
+            </div>
+            <div id="copy">&copy; Copyright PSAISSI - 2014</div>
+        </footer>
+    </body>
+</html>
