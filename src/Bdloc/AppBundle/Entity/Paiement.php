@@ -19,41 +19,41 @@ class Paiement
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="type", type="string", length=255)
      */
-    private $type;
+    protected $type;
 
     /**
      * @var string
      *
      * @ORM\Column(name="amount", type="decimal")
      */
-    private $amount;
+    protected $amount;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateCreated", type="datetime")
      */
-    private $dateCreated;
+    protected $dateCreated;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateModified", type="datetime")
      */
-    private $dateModified;
+    protected $dateModified;
 
     /**
      *
      *@ORM\ManytoOne(targetEntity="User", inversedBy="paiements")
      */
-    private $user;
+    protected $user;
 
 
     /**

@@ -21,7 +21,7 @@ class CreditCard
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
@@ -35,51 +35,51 @@ class CreditCard
      *
      * @ORM\Column(name="validUntil", type="date", nullable=true)
      */
-    private $validUntil;
+    protected $validUntil;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateCreated", type="datetime", nullable=true)
      */
-    private $dateCreated;
+    protected $dateCreated;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateModified", type="datetime", nullable=true)
      */
-    private $dateModified;
+    protected $dateModified;
 
     /**
      *
      *@ORM\ManytoOne(targetEntity="User", inversedBy="creditCards")
      */
-    private $user;
+    protected $user;
 
     // Propriétés non enregistrées en BDD
     /**
      * @var string
      * @Assert\NotBlank(message="Veuillez fournir un type de carte de crédit.")
      */
-    private $creditCardType;
+    protected $creditCardType;
     /**
      * @var string
      * @Assert\NotBlank(message="Veuillez fournir un numéro de carte de crédit.")
      * @Assert\Regex(pattern= "#^[0-9]+$#", message="Format invalide")
      */
-    private $creditCardNumber;
+    protected $creditCardNumber;
     /**
      * @var \DateTime
      * @Assert\NotBlank(message="Veuillez fournir une date d'expiration.")
      */
-    private $expirationDate;
+    protected $expirationDate;
     /**
      * @var string
      * @Assert\NotBlank(message="Veuillez fournir le code CVC.")
      * @Assert\Regex(pattern= "#^[0-9]{3,3}$#", message="Format invalide")
      */
-    private $codeCVC;
+    protected $codeCVC;
     /**
      * @var string
      * @Assert\NotBlank(message="Veuillez fournir le nom figurant sur la carte de crédit.")
@@ -91,7 +91,7 @@ class CreditCard
      * @Assert\NotBlank(message="Veuillez fournir le prénom figurant sur la carte de crédit.")
      * @Assert\Regex(pattern= "#^[a-zA-Z\s-]+$#", message="Format invalide")
      */
-    private $creditCardFirstName;
+    protected $creditCardFirstName;
 
     /**
      * Get id

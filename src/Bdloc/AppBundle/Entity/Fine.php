@@ -20,61 +20,61 @@ class Fine
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="reason", type="string", length=50)
      */
-    private $reason;
+    protected $reason;
 
     /**
      * @var string
      *
      * @ORM\Column(name="status", type="string", length=50)
      */
-    private $status;
+    protected $status;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateCreated", type="datetime")
      */
-    private $dateCreated;
+    protected $dateCreated;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateModified", type="datetime")
      */
-    private $dateModified;
+    protected $dateModified;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="datePaid", type="datetime")
      */
-    private $datePaid;
+    protected $datePaid;
 
     /**
      * @var string
      *
      * @ORM\Column(name="montant", type="decimal")
      */
-    private $montant;
+    protected $montant;
     
     /**
     *
     *@ORM\ManyToOne(targetEntity="Cart", inversedBy="fines")
     */
-    private $cart;
+    protected $cart;
 
      /**
      *
      *@ORM\ManytoOne(targetEntity="User", inversedBy="fines")
      */
-    private $user;
+    protected $user;
 
     /**
      * Get id

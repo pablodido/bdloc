@@ -27,7 +27,7 @@ class User implements UserInterface
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
@@ -41,7 +41,7 @@ class User implements UserInterface
      *)
      * @ORM\Column(name="username", type="string", length=255, unique=true)
      */
-    private $username;
+    protected $username;
 
     /**
      * @var string
@@ -50,7 +50,7 @@ class User implements UserInterface
      * @Assert\Email(message="Format invalide")
      * @ORM\Column(name="email", type="string", length=255, unique=true)
      */
-    private $email;
+    protected $email;
 
     /**
      * @var string
@@ -61,28 +61,28 @@ class User implements UserInterface
      * )
      * @ORM\Column(name="password", type="string", length=255)
      */
-    private $password;
+    protected $password;
 
     /**
      * @var string
      *
      * @ORM\Column(name="token", type="string", length=255)
      */
-    private $token;
+    protected $token;
 
     /**
      * @var string
      *
      * @ORM\Column(name="salt", type="string", length=255)
      */
-    private $salt;
+    protected $salt;
 
     /**
      * @var array
      *
      * @ORM\Column(name="roles", type="array", nullable=true)
      */
-    private $roles;
+    protected $roles;
 
     /**
      * @var string
@@ -95,7 +95,7 @@ class User implements UserInterface
      * )
      * @ORM\Column(name="firstName", type="string", length=255)
      */
-    private $firstName;
+    protected $firstName;
 
     /**
      * @var string
@@ -108,7 +108,7 @@ class User implements UserInterface
      * )
      * @ORM\Column(name="lastName", type="string", length=255)
      */
-    private $lastName;
+    protected $lastName;
 
     /**
      * @var string
@@ -116,7 +116,7 @@ class User implements UserInterface
      * @Assert\Regex(pattern= "#^[0-9]{5,5}$#", message="Code postal de 5 chiffres")
      * @ORM\Column(name="zip", type="string", length=5, nullable=true)
      */
-    private $zip;
+    protected $zip;
 
     /**
      * @var string
@@ -129,7 +129,7 @@ class User implements UserInterface
      *)
      * @ORM\Column( name="address", type="string", length=20, nullable=true)
      */
-    private $address;
+    protected $address;
 
     /**
      * @var string
@@ -137,70 +137,70 @@ class User implements UserInterface
      * @Assert\Regex(pattern= "#^0[1-8]([-.\s]?[0-9]{2}){4}$|^\+[1-9]{2}(\(0\))?[1-8]([-.\s]?[0-9]{2}){4}$|^00[1-9]{2}[1-8]([-.\s]?[0-9]{2}){4}$#", message="Format invalide")
      * @ORM\Column( name="phone", type="string", length=20, nullable=true)
      */
-    private $phone;
+    protected $phone;
 
     /**
      * @var boolean
      *
      * @ORM\Column( name="isEnabled", type="boolean", nullable=true)
      */
-    private $isEnabled;
+    protected $isEnabled;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column( name="dateCreated", type="datetime", nullable=true)
      */
-    private $dateCreated;
+    protected $dateCreated;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column( name="dateModified", type="datetime", nullable=true)
      */
-    private $dateModified;
+    protected $dateModified;
 
      /**
     * @ORM\ManyToOne(targetEntity="DropSpot", inversedBy="users")
     */
-    private $dropspot;
+    protected $dropspot;
 
      /**
     * @ORM\OneToMany(targetEntity="Cart", mappedBy="users")
     */
-    private $carts;
+    protected $carts;
 
     /**
      * @var string
      *
      * @ORM\Column(name="subscriptionType", type="string", length=1)
      */
-    private $subscriptionType;
+    protected $subscriptionType;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="subscriptionRenewal", type="date")
      */
-    private $subscriptionRenewal;
+    protected $subscriptionRenewal;
 
     /**
      *
      *@ORM\OnetoMany(targetEntity="Paiement", mappedBy="user")
      */
-    private $paiements;
+    protected $paiements;
 
     /**
      *
      *@ORM\OnetoMany(targetEntity="Fine", mappedBy="user")
      */
-    private $fines;
+    protected $fines;
 
      /**
      *
      *@ORM\OnetoMany(targetEntity="CreditCard", mappedBy="user")
      */
-    private $creditCards;
+    protected $creditCards;
 
     /**
      * Get id

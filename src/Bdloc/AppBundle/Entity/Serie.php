@@ -12,52 +12,52 @@ class Serie
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=false)
      */
-    private $title;
+    protected $title;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $style;
+    protected $style;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $comment;
+    protected $comment;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $board;
+    protected $board;
 
     /**
      * @ORM\Column(type="integer", length=11, nullable=true)
      */
-    private $idbel;
+    protected $idbel;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
      */
-    private $language;
+    protected $language;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $dateModified;
+    protected $dateModified;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $dateCreated;
+    protected $dateCreated;
 
     /**
      * @ORM\OneToMany(targetEntity="Bdloc\AppBundle\Entity\Book", mappedBy="serie")
      */
-    private $books;
+    protected $books;
     /**
      * Constructor
      */
