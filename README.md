@@ -1,7 +1,8 @@
 bdloc
 =====
+/*****************the projet est à l'usage des professionnels pour rendre compte de l'état des connaissances acquises******/
 
-projet symfony: création d'une bdthèque (expérimentation)
+Projet symfony: création d'une bdthèque (expérimentation)
 
 Ce projet s'inscrit dans le cadre d'un apprentissage du framework. Elle est en cours jusqu'à sa réalisation fonctionnelle. 
 
