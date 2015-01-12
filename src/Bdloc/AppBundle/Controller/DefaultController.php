@@ -81,62 +81,7 @@ class DefaultController extends Controller
 
         return $this->render("book/detail.html.twig",$params); 
     }
-    /**
-     * @Route("/addbook/{id}")
-     */
-    public function addbookAction($id)
-    {
-
-        $user = $this->getUser();
-        //contient les paramètres pour Twig
-        $params = array();
-
-        $BookRepo=$this->getDoctrine()
-        ->getRepository("BdlocAppBundle:Book");
-        $book=$BookRepo->find($id); 
-
-        $bdStockOld=$book->getStock();
-        $bdStockNew=$bdStockOld-1;
-        $book->setStock($bdStockNew);
-
-        $cartRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Cart");
-        $newCart = $cartRepo->findOneBy(
-             array('user'=>$user,'status'=>"en cours")
-        );
-
-        if (! $newCart){ 
-            $newCart = new Cart();
-        }
-        $newItem = new CartItem();
-        
-        $newItem->setCart($newCart);
-        $newItem->setBook($book);// relation  many to one 
-        $newCart->addCartitem($newItem); // relation one to many
-        $newItem->setDateModified(new \DateTime);
-        $newItem->setDateCreated(new \DateTime);
-        $newCart->setDateModified(new \DateTime);
-        $newCart->setDateCreated(new \DateTime);
-        $newCart->setStatus("en cours");
-        $newCart->setUser($user);
     
-              //sauvegarder en bdd
-            $em = $this->getDoctrine()->getManager();
-            $em->persist( $newItem);
-            $em->persist( $newCart);
-            $em-> persist($book);
-            $em->flush();
-          
-
-            //crée un message qui ne s'affichera qu'une fois
-            $this->get('session')->getFlashBag()->add(
-                'notice',
-                'Votre BD ajouté!'
-            );
-
-            //vide le formulaire et empêche la resoumission des données
-            return $this->redirect( $this->generateUrl("bdloc_app_default_index", $params)); 
-    }
-
     /**
      * @Route("/basket/")
      */

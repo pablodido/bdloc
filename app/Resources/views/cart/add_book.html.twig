@@ -1,0 +1,14 @@
+{% extends ":layouts:base.html.twig" %}
+
+{% block main_content %}
+    <p id="itnum">{{ itemsNumber }}</p>
+    <p id="urlItemsNumber">{{ path('bdloc_app_cart_getitemsnumberincurrentcart') }}</p>
+    {% if bookStock == 0 %}
+        <span id="bookStock">Indisponible...</span>
+    {% elseif bookStock == 1 %}
+        <span id="bookStock">{{ bookStock }} dispo !</span>
+    {% else %}
+        <span id="bookStock">{{ bookStock }} dispos !</span>
+    {% endif %}
+    <p id="message">{{ message }}</p>
+{% endblock %}

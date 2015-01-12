@@ -99,7 +99,7 @@ class Book
     private $serie;
 
      /**
-    * @ORM\OneToMany(targetEntity="Bdloc\AppBundle\Entity\CartItem", mappedBy="Book")
+    * @ORM\OneToMany(targetEntity="CartItem", mappedBy="book")
     */
     private $cartitems;
 

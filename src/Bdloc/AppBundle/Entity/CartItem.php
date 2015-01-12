@@ -44,7 +44,7 @@ class CartItem
 
     /**
      * @var integer
-     * @ORM\ManyToOne(targetEntity="Bdloc\AppBundle\Entity\Book", inversedBy="cartitems")
+     * @ORM\ManyToOne(targetEntity="Book", inversedBy="cartitems")
      * 
      */
     private $book;
