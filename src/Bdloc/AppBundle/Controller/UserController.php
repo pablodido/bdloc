@@ -327,7 +327,7 @@ class UserController extends Controller {
         }
         else {
             // Redirection vers le catalogue
-            return $this->redirect( $this->generateUrl("bdloc_app_book_catalogredirect") );
+            return $this->redirect( $this->generateUrl("bdloc_app_default_basket") );
         }
     }
     /**
@@ -387,7 +387,7 @@ class UserController extends Controller {
         $messageMail = \Swift_Message::newInstance()
             ->setSubject('Désabonnement sur BDloc')
             ->setFrom('admin@bdloc.com')
-            ->setTo( 'sweetformation@yahoo.fr' )
+            ->setTo( 'pablosaissi@gmail.com' )
             ->setContentType('text/html')
             ->setBody($this->renderView('emails/unsubscribe_email.html.twig', $params_message));
         $this->get('mailer')->send($messageMail);

@@ -50,14 +50,16 @@ class PaymentController extends Controller
 
         $creditCard = new Creditcard;
         $params = array();
-        $CreditcardsForm = $this->createForm(new CreditCardsType(), $creditCard);
+        // $CreditcardsForm = 
 
         //soumission du form
-        $request = $this->getRequest();
-        $CreditcardsForm->handleRequest($request);
+        $formHandler=$this->get('payment_handler');
+        // new PaymentHandler($this->createForm(new CreditCardsType(), $creditCard),$request);
+     
+      
            // Déclenche la validation sur notre entité ET teste si le formulaire est soumis
-        if ($CreditcardsForm->isValid()){
-
+        
+        if($formHandler->process()){
         // On récupère le prix avec le bouton radio rajouté manuellement dans le form!
             $typeAbo = $CreditcardsForm["abonnement"]->getData();
             if ($typeAbo == "A") {
@@ -74,14 +76,11 @@ class PaymentController extends Controller
             $statut = $ppu->createPayment();
             $paypalCC_id = $ppu->registerCreditCard();
 
-         //ajout de la carte  en base
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($creditCard);
-        $em->persist($user);
-        $em->flush();
+         //ajout de la carte  en base par paymement handler as a service
+        //e$em = $this->getDoctrine()->getManager();
 
         //redirige vers la page choix du point relais
-            return $this->redirect( $this->generateUrl( "bdloc_app_default_index" ) );
+        return $this->redirect( $this->generateUrl( "bdloc_app_default_index" ) );
        
       }
           $params['CreditcardsForm'] = $CreditcardsForm->createView();

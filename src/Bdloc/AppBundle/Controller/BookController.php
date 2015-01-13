@@ -227,8 +227,9 @@ class BookController extends Controller
     public function handleFilterBookAction(Request $request)
     {
         $filterBook = new FilterBook();
-        $filterForm = $this->createForm(new FilterBookType(), $filterBook);
-        $filterForm->handleRequest($request);
+        //$filterForm = $this->createForm(new FilterBookType(), $filterBook);
+         //soumission du form
+        $formHandler=$this->get('filtre_handler');
 
         $params = $filterBook->getUrlParams();
 

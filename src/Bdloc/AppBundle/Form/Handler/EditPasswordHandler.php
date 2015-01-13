@@ -10,24 +10,32 @@ class FiltreHandler
 
 	protected $form;
 	protected $request;
+	$this->em = $em;
 	
 	/**
 	* @param  Form $form
 	* @param Request $request
+	* @param Request $request
 	**/
 
-	public function __construct(Form $form,request $request){
+	public function __construct(Form $form,request $request, EntityManager $em){
 
 		$this->form=$form;
 		$this->request= $request;
+		$this->em = $em;
 		
 
 	}
 
 
 	public function process(){
-		$this->filterForm->handleRequest($this->request);
-		$this->$filterForm;
+		$this->$editPasswordForm->handleRequest($request);
+		if ($this->$editPasswordForm->isValid()){
+		  		
+		  		return true;
+		  }
+		  return false;
+
 
 	}
 	protected function onSuccess(){

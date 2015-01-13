@@ -26,7 +26,7 @@ use Bdloc\AppBundle\Form\UnsubscribeType;
 class AccountController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/moncompte")
      */
     public function homeAction()
     {
@@ -100,13 +100,15 @@ class AccountController extends Controller
         //$changePasswordForm->handleRequest($request);
 
         $currentPassword = $user->getPassword();
+        //soumission du form
+        $formHandler=$this->get('editpassword_handler');
 
-        $editPasswordForm = $this->createForm(new EditPasswordType(), $user);
+       // $editPasswordForm = $this->createForm(new EditPasswordType(), $user);
 
-        $request = $this->getRequest();
-        $editPasswordForm->handleRequest($request);
+        //$request = $this->getRequest();
+        //$editPasswordForm->handleRequest($request);
 
-        if ($editPasswordForm->isValid()) {
+        if ($formHandler->process()) {
         //if ($changePasswordForm->isValid()) {
 
             //echo $changePasswordForm['oldPassword'];

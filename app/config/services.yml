@@ -2,6 +2,13 @@
 # http://symfony.com/doc/current/book/service_container.html
 parameters:
 #    parameter_name: value
+    creditcard_type.class: AppBundle\Form\CreditcardsType
+    payment_handler.class: AppBundle\Form\Handler\PaymentHandler
+    filtre_handler.class: AppBundle\Form\Handler\FiltreHandler
+    filterbook_type.class: AppBundle\Form\FilterBookType
+    editpassword_type.class: AppBundle\Form\EditPasswordType
+    editpassword_handler.class: AppBundle\Form\Handler\EditPasswordHandler
+
 
 services:
 #    service_name:
@@ -15,3 +22,52 @@ services:
     paypal_utility:
         class: Bdloc\AppBundle\Service\PPUtility
         arguments: [@paypal, %prixAboM%, %prixAboA%]
+    payment_form:
+        factory_service: form.factory
+        factory_method: createNamed
+        class: Symfony\Component\Form\Form
+        arguments:
+            - payment
+            - payment_form
+
+    creditcard_type:
+        class: %creditcard_type.class%
+        tags:
+           - { name: form.type, alias: payment_form }
+
+    payment_handler:
+        class: %payment_handler.class%
+        arguments: [@payment_form, doctrne.orm.entity_manager]
+     # filter   
+    filter_form:
+       factory_service: form.factory
+       factory_method: createNamed
+       class: Symfony\Component\Form\Form
+       arguments:
+           - filter_form
+
+    filtre_handler:
+        class: %filtre_handler.class%
+        arguments: [@filter_form]
+
+    filterbook_type:
+        class: %filterbook_type.class%
+        tags:
+           - { name: form.type, alias: filter_form }
+
+    # edit password
+    editpassword_form:
+       factory_service: form.factory
+       factory_method: createNamed
+       class: Symfony\Component\Form\Form
+       arguments:
+           - editpassword_form
+
+    filtre_handler:
+        class: %editpassword_handler.class%
+        arguments: [@editpassword_form]
+
+    filterbook_type:
+        class: %editpassword_type.class%
+        tags:
+           - { name: form.type, alias: editpassword_form }
