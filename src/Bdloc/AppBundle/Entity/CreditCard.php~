@@ -21,65 +21,65 @@ class CreditCard
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="paypalId", type="string", length=255)
+     * @ORM\Column(name="paypalId", type="string", length=255, nullable=true)
      */
     private $paypalId;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="validUntil", type="date")
+     * @ORM\Column(name="validUntil", type="date", nullable=true)
      */
-    private $validUntil;
+    protected $validUntil;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateCreated", type="datetime")
+     * @ORM\Column(name="dateCreated", type="datetime", nullable=true)
      */
-    private $dateCreated;
+    protected $dateCreated;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateModified", type="datetime")
+     * @ORM\Column(name="dateModified", type="datetime", nullable=true)
      */
-    private $dateModified;
+    protected $dateModified;
 
     /**
      *
      *@ORM\ManytoOne(targetEntity="User", inversedBy="creditCards")
      */
-    private $user;
+    protected $user;
 
     // Propriétés non enregistrées en BDD
     /**
      * @var string
      * @Assert\NotBlank(message="Veuillez fournir un type de carte de crédit.")
      */
-    private $creditCardType;
+    protected $creditCardType;
     /**
      * @var string
      * @Assert\NotBlank(message="Veuillez fournir un numéro de carte de crédit.")
      * @Assert\Regex(pattern= "#^[0-9]+$#", message="Format invalide")
      */
-    private $creditCardNumber;
+    protected $creditCardNumber;
     /**
      * @var \DateTime
      * @Assert\NotBlank(message="Veuillez fournir une date d'expiration.")
      */
-    private $expirationDate;
+    protected $expirationDate;
     /**
      * @var string
      * @Assert\NotBlank(message="Veuillez fournir le code CVC.")
      * @Assert\Regex(pattern= "#^[0-9]{3,3}$#", message="Format invalide")
      */
-    private $codeCVC;
+    protected $codeCVC;
     /**
      * @var string
      * @Assert\NotBlank(message="Veuillez fournir le nom figurant sur la carte de crédit.")
@@ -91,7 +91,7 @@ class CreditCard
      * @Assert\NotBlank(message="Veuillez fournir le prénom figurant sur la carte de crédit.")
      * @Assert\Regex(pattern= "#^[a-zA-Z\s-]+$#", message="Format invalide")
      */
-    private $creditCardFirstName;
+    protected $creditCardFirstName;
 
     /**
      * Get id
@@ -195,26 +195,183 @@ class CreditCard
         return $this->dateModified;
     }
 
+  
+
     /**
-     * Set userId
+     * Set user
      *
-     * @param integer $userId
+     * @param \Bdloc\AppBundle\Entity\User $user
      * @return CreditCard
      */
-    public function setUserId($userId)
+    public function setUser(\Bdloc\AppBundle\Entity\User $user = null)
     {
-        $this->userId = $userId;
+        $this->user = $user;
 
         return $this;
     }
 
     /**
-     * Get userId
+     * Get user
      *
-     * @return integer 
+     * @return \Bdloc\AppBundle\Entity\User 
      */
-    public function getUserId()
+    public function getUser()
     {
-        return $this->userId;
+        return $this->user;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+     * Set creditCardType
+     *
+     * @param string $creditCardType
+     * @return CreditCard
+     */
+    public function setCreditCardType($creditCardType)
+    {
+        $this->creditCardType = $creditCardType;
+
+        return $this;
+    }
+
+    /**
+     * Get creditCardType
+     *
+     * @return string 
+     */
+    public function getCreditCardType()
+    {
+        return $this->creditCardType;
+    }
+
+    /**
+     * Set creditCardNumber
+     *
+     * @param string $creditCardNumber
+     * @return CreditCard
+     */
+    public function setCreditCardNumber($creditCardNumber)
+    {
+        $this->creditCardNumber = $creditCardNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get creditCardNumber
+     *
+     * @return string 
+     */
+    public function getCreditCardNumber()
+    {
+        return $this->creditCardNumber;
+    }
+
+    /**
+     * Set expirationDate
+     *
+     * @param \DateTime $expirationDate
+     * @return CreditCard
+     */
+    public function setExpirationDate($expirationDate)
+    {
+        $this->expirationDate = $expirationDate;
+
+        return $this;
+    }
+
+    /**
+     * Get expirationDate
+     *
+     * @return \DateTime 
+     */
+    public function getExpirationDate()
+    {
+        return $this->expirationDate;
+    }
+
+    /**
+     * Set codeCVC
+     *
+     * @param string $codeCVC
+     * @return CreditCard
+     */
+    public function setCodeCVC($codeCVC)
+    {
+        $this->codeCVC = $codeCVC;
+
+        return $this;
+    }
+
+    /**
+     * Get codeCVC
+     *
+     * @return string 
+     */
+    public function getCodeCVC()
+    {
+        return $this->codeCVC;
+    }
+
+    /**
+     * Set creditCardLastName
+     *
+     * @param string $creditCardLastName
+     * @return CreditCard
+     */
+    public function setCreditCardLastName($creditCardLastName)
+    {
+        $this->creditCardLastName = $creditCardLastName;
+
+        return $this;
+    }
+
+    /**
+     * Get creditCardLastName
+     *
+     * @return string 
+     */
+    public function getCreditCardLastName()
+    {
+        return $this->creditCardLastName;
+    }
+
+    /**
+     * Set creditCardFirstName
+     *
+     * @param string $creditCardFirstName
+     * @return CreditCard
+     */
+    public function setCreditCardFirstName($creditCardFirstName)
+    {
+        $this->creditCardFirstName = $creditCardFirstName;
+
+        return $this;
+    }
+
+    /**
+     * Get creditCardFirstName
+     *
+     * @return string 
+     */
+    public function getCreditCardFirstName()
+    {
+        return $this->creditCardFirstName;
+    }
+
 }
+

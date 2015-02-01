@@ -30,7 +30,7 @@ class BookController extends Controller
             "availability" => 0
         );
 
-        $url = $this->generateUrl("bdloc_app_book_catalog", $params);
+        $url = $this->generateUrl("bdloc_app_default_index", $params);
         return $this->redirect($url);
     }
 
@@ -81,7 +81,7 @@ class BookController extends Controller
                 "categories" => $categories_url,
                 "availability" => $availability,
             );
-            $url = $this->generateUrl("bdloc_app_book_catalog", $params);
+            $url = $this->generateUrl("bdloc_app_default_index", $params);
             return $this->redirect($url);
 
         }
@@ -125,7 +125,7 @@ class BookController extends Controller
 
         $params['booksIdInCart'] = $booksIdInCart;
         
-        return $this->render("book/catalog.html.twig", $params);
+        return $this->render("default/home.html.twig", $params);
     }
 
     /**
@@ -153,7 +153,7 @@ class BookController extends Controller
 
         $params["book"] = $book;
 
-        return $this->render("book/details.html.twig", $params);
+        return $this->render("book/detail.html.twig", $params);
     }
 
     /**
@@ -166,7 +166,7 @@ class BookController extends Controller
         //$filterBook = new FilterBook($page, $orderBy, $orderDir, $numPerPage, $keywords, explode(",", $categories), $availability);
         
         $filterForm = $this->createForm(new FilterBookType(), $filterBook);
-        $filterPaginationForm = $this->createForm(new FilterBookPaginationType(), $filterBook);
+        //$filterPaginationForm = $this->createForm(new FilterBookPaginationType(), $filterBook);
         //$filterForm = $this->createForm(new FilterBookType(), $filterBook, array(
         //    "action" => $this->generateUrl('bdloc_app_book_handlefilterbook'))
         //);

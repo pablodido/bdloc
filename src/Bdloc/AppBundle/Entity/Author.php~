@@ -12,72 +12,72 @@ class Author
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $firstName;
+    protected $firstName;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=false)
      */
-    private $lastName;
+    protected $lastName;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $aka;
+    protected $aka;
 
     /**
      * @ORM\Column(type="date", nullable=true)
      */
-    private $birthDate;
+    protected $birthDate;
 
     /**
      * @ORM\Column(type="date", nullable=true)
      */
-    private $deathDate;
+    protected $deathDate;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
      */
-    private $country;
+    protected $country;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $picture;
+    protected $picture;
 
     /**
      * @ORM\Column(type="integer", length=11, nullable=true)
      */
-    private $idbel;
+    protected $idbel;
 
     /**
      * @ORM\Column(type="datetime", nullable=false)
      */
-    private $dateCreated;
+    protected $dateCreated;
 
     /**
      * @ORM\Column(type="datetime", nullable=false)
      */
-    private $dateModified;
+    protected $dateModified;
 
     /**
      * @ORM\OneToMany(targetEntity="Bdloc\AppBundle\Entity\Book", mappedBy="illustrator")
      */
-    private $books_illustrated;
+    protected $books_illustrated;
 
     /**
      * @ORM\OneToMany(targetEntity="Bdloc\AppBundle\Entity\Book", mappedBy="scenarist")
      */
-    private $books_scenarized;
+    protected $books_scenarized;
 
     /**
      * @ORM\OneToMany(targetEntity="Bdloc\AppBundle\Entity\Book", mappedBy="colorist")
      */
-    private $books_colored;
+    protected $books_colored;
     /**
      * Constructor
      */

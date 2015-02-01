@@ -204,8 +204,7 @@ h1.center {
 }
 .detailBddetail p:first-child{
    font-weight:bold;
-   text-transform: uppercase;
-   text-decoration: underline;
+   
 }
 .stockdetail{
     color: red; 

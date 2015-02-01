@@ -19,60 +19,60 @@ class DropSpot
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
-    private $name;
+    protected $name;
      /**
      * @var string
      *
      * @ORM\Column(name="latitude", type="string", length=255)
      */
-    private $latitude;
+    protected $latitude;
 
      /**
      * @var string
      *
      * @ORM\Column(name="longitude", type="string", length=255)
      */
-    private $longitude;
+    protected $longitude;
 
     /**
      * @var string
      *
      * @ORM\Column(name="address", type="string", length=255)
      */
-    private $address;
+    protected $address;
 
     /**
      * @var string
      *
      * @ORM\Column(name="zip", type="string", length=5)
      */
-    private $zip;
+    protected $zip;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateCreated", type="datetime")
      */
-    private $dateCreated;
+    protected $dateCreated;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateModified", type="datetime")
      */
-    private $dateModified;
+    protected $dateModified;
 
      /**
     * @ORM\OneToMany(targetEntity="User", mappedBy="dropspot")
     */
-    private $users;
+    protected $users;
 
     /**
      * Get id

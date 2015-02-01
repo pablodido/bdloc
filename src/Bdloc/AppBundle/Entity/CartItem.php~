@@ -19,35 +19,35 @@ class CartItem
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateCreated", type="datetime")
      */
-    private $dateCreated;
+    protected $dateCreated;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateModified", type="datetime")
      */
-    private $dateModified;
+    protected $dateModified;
 
     /**
      * @var integer
      * @ORM\ManyToOne(targetEntity="Cart", inversedBy="cartitems")
      * 
      */
-    private $cart;
+    protected $cart;
 
     /**
      * @var integer
      * @ORM\ManyToOne(targetEntity="Book", inversedBy="cartitems")
      * 
      */
-    private $book;
+    protected $book;
 
 
     /**

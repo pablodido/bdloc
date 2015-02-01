@@ -3,11 +3,26 @@ bdloc_user:
     type:     annotation
     prefix:   /
 
+bdloc_app_account:
+    resource: "@BdlocAppBundle/Controller/AccountController.php"
+    type:     annotation
+    prefix:   /compte/
 
 bdloc_app:
     resource: "@BdlocAppBundle/Controller/"
     type:     annotation
     prefix:   /
+bdloc_app_cart:
+    resource: "@BdlocAppBundle/Controller/CartController.php"
+    type:     annotation
+    prefix:   /panier/
+bdloc_app_cronjob:
+    resource: "@BdlocAppBundle/Controller/CronJobController.php"
+    type:     annotation
+    prefix:   /
+bdloc_app_filter_create:
+    path:    /filter/bdloc_app_filter_create
+    defaults: { _controller: bdlocAppBundle:filter:create }
 
 
 login_check:

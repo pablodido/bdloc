@@ -1,44 +1,29 @@
 {% extends '::base.html.twig' %}
 {% block title %}Bdthèque | Détails de la BD{% endblock %}
-
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" type="text/css" href="{{ asset("css/catalogue.css") }}">
+{% endblock %}
 {% block body %}
 {% include "::header.html.twig" %}    
 <div class="affichageBddetail">
         <div class="bd1">
-            <img class="imagedetail"src="{{ asset('cover/115618_c.jpg') }}"title="bd one">
+            <img class="imagedetail"src="{{ asset('cover/115618_c.jpg') }}"alt="{{ book.title }}">
         </div>
         <div class="detailBddetail">
             <h3>{{book.title}}</h3>
             <div class="identity">
-                <div class="auteur"><h4>Auteur:</h4>
-                	<p><strong>Nom: </strong>{{book.illustrator.lastName}} </p>
-                	<p><strong>Prénom:</strong> {{book.illustrator.firstName}}</p>
-                	<p><strong>Aka:</strong> {{book.illustrator.aka}}</p>
-                	<p><strong>BirthDate:</strong> {{book.illustrator.birthdate|date('d/m/y')}}</p>
-                	<p><strong>DeathDate:</strong>{{book.illustrator.deathdate|date('d/m/y')}}</p>
-                	<p><strong>Country:</strong> {{book.illustrator.country}}</p>
-                </div>
-                <div class="coloriste"><h4>Coloriste:</h4>
-                	<p><strong>Nom:</strong> {{book.colorist.lastName}}</p>
-                	<p><strong>Prénom:</strong>{{book.colorist.firstName}}</p>
-                	<p><strong>Aka: </strong>{{book.colorist.aka}}</p>
-                	<p><strong>BirthDate:</strong>{{book.colorist.birthdate|date('d/m/y')}}  </p>
-                	<p><strong>DeathDate:</strong> {{book.colorist.deathdate|date('d/m/y')}}</p>
-                	<p><strong>Country: </strong>{{book.colorist.country}}</p>
-                </div>
-                <div class="scenariste"><h4>Scénariste: </h4>
-                	<p><strong>Nom:</strong> {{book.scenarist.lastName}}</p>
-                	<p><strong>Prénom: </strong>{{book.scenarist.firstName}}</p>
-                	<p><strong>Aka:</strong> {{book.scenarist.aka}}</p>
-                	<p><strong>BirthDate: </strong>{{book.scenarist.birthdate|date('d/m/y')}}</p>
-                	<p><strong>DeathDate:</strong>{{book.scenarist.deathdate|date('d/m/y')}}</p>
-                	<p><strong>Country:</strong> {{book.scenarist.country}}</p>
-                </div>
+              <p class="auteur">Auteur : {{ book.illustrator.lastName }} {{ book.illustrator.firstName }}</p>
+                <p class="coloriste">Coloriste : </p>
+                <p class="scenariste">Scénariste : {{ book.scenarist.lastName }} {{ book.scenarist.firstName }}</p>
             </div>
             <div class="serie"><h4>Série: </h4>
             	<p><strong>Style:</strong>{{book.serie.style}}</p>
-            	<p><strong>Comment: </strong>{{book.serie.comment}}</p>
-            	<p><strong>Language:</strong> {{book.serie.language}}</p>
+            	{% if book.serie.comment|length != 0 %}
+                <div id="descriptionBd">
+                    <p id="syno">Synopsis : </p>
+                    <p id="descr">{{ book.serie.comment }}</p>
+                </div>{% endif %}Language:</strong> En {% if book.serie.language == "fr" %}{{ "Français" }}{% else %}{{ "Anglais"}}{% endif %}</p>
             </div>
             <div class="Bd"><h4>Bd: </h4>
             	<p><strong>Title: </strong>{{book.title}}</p>
@@ -47,11 +32,20 @@
             	<p><strong>Pages:</strong>{{book.pages}}</p>
             </div>
         </div>
-       	<div class="stockdetail">Stock: {{book.stock}}</div>
-        <form class="ajouterdetail">
-             <input type="submit" class="buttonadd" value="Ajouter au panier !">
-        </form>
-        <a class="retour" href="{{ path('bdloc_app_default_index')}}">Retour à la liste</a>
+       	<div class="stockdetail">
+            {% if book.stock == 0 %}
+                <p class="indisponible">Indisponible...</p>
+            {% else %}
+            <p class="disponible"><span class="bookStock"> Stock: {{ book.stock }} dispos !</span></p>
+           
+       
+            <form class="ajouterdetail">
+                 <a href="{{ path('bdloc_app_cart_addbook', {book_id: book.id}) }}" title="Ajouter au panier"><input type="submit" class="buttonadd" value="Ajouter au panier !"></a>
+            </form>
+            {% endif %}
+            <a class="retour" href="{{ path('bdloc_app_default_index')}}">Retour à la liste</a>
+         </div>
+        
  </div>
-{% include "::footer.html.twig" %} 
+
 {% endblock %}

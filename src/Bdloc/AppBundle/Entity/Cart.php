@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Bdloc\AppBundle\Entity\CartRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Cart
 {

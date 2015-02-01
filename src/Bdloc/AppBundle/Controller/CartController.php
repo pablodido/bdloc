@@ -44,7 +44,7 @@ class CartController extends Controller {
         }
         $params['cart'] = $cart;
         
-         return $this->redirect($this->generateUrl("bdloc_app_default_basket"), $params);
+         return $this->redirect($this->generateUrl("book/home.html.twig"), $params);
     }
 
      /**
@@ -129,7 +129,7 @@ class CartController extends Controller {
             $bookStock = $book->getStock();
         }    
             //vide le formulaire et empêche la resoumission des données
-            return $this->redirect( $this->generateUrl("bdloc_app_default_index", $params)); 
+            return $this->redirect( $this->generateUrl("book/home.html.twig", $params)); 
     }
 
     

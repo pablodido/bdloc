@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 use Bdloc\AppBundle\Form\RegisterType;
 use Bdloc\AppBundle\Form\UserType;
+use Bdloc\AppBundle\Form\CartItemType;
 use Bdloc\AppBundle\Entity\CartItem;
 use Bdloc\AppBundle\Entity\Cart;
 use Bdloc\AppBundle\Entity\User;

@@ -12,47 +12,47 @@ class Book
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=false)
      */
-    private $title;
+    protected $title;
 
     /**
      * @ORM\Column(type="integer", length=4, nullable=true)
      */
-    private $num;
+    protected $num;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=false)
      */
-    private $publisher;
+    protected $publisher;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
      */
-    private $isbn;
+    protected $isbn;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $cover;
+    protected $cover;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $exlibris;
+    protected $exlibris;
 
     /**
      * @ORM\Column(type="integer", length=4, nullable=true)
      */
-    private $pages;
+    protected $pages;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $board;
+    protected $board;
 
     /**
      * @ORM\Column(type="integer", length=11, nullable=true)
@@ -62,46 +62,46 @@ class Book
     /**
      * @ORM\Column(type="integer", length=3, nullable=false)
      */
-    private $stock;
+    protected $stock;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $dateCreated;
+    protected $dateCreated;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $dateModified;
+    protected $dateModified;
 
     /**
      * @ORM\ManyToOne(targetEntity="Bdloc\AppBundle\Entity\Author", inversedBy="books_illustrated")
      * @ORM\JoinColumn(name="illustrator", referencedColumnName="id", nullable=false)
      */
-    private $illustrator;
+    protected $illustrator;
 
     /**
      * @ORM\ManyToOne(targetEntity="Bdloc\AppBundle\Entity\Author", inversedBy="books_scenarized")
      * @ORM\JoinColumn(name="scenarist", referencedColumnName="id")
      */
-    private $scenarist;
+    protected $scenarist;
 
     /**
      * @ORM\ManyToOne(targetEntity="Bdloc\AppBundle\Entity\Author", inversedBy="books_colored")
      * @ORM\JoinColumn(name="colorist", referencedColumnName="id")
      */
-    private $colorist;
+    protected $colorist;
 
     /**
      * @ORM\ManyToOne(targetEntity="Bdloc\AppBundle\Entity\Serie", inversedBy="books")
      * @ORM\JoinColumn(name="serie_id", referencedColumnName="id")
      */
-    private $serie;
+    protected $serie;
 
      /**
-    * @ORM\OneToMany(targetEntity="CartItem", mappedBy="books")
+    * @ORM\OneToMany(targetEntity="CartItem", mappedBy="book")
     */
-    private $cartitems;
+    protected $cartitems;
 
     /**
      * Set id

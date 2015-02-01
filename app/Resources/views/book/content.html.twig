@@ -2,27 +2,18 @@
 <link rel="stylesheet" type="text/css" href="{{ asset("css/catalogue.css") }}">
 {% endblock %}
 
+{% block sidebar %}
+    <aside id="sidebar">
+  
+    </aside>
+{% endblock %}  
+
 {% block main %}
   <!-- /********************************* MAIN CONTENT *********************************/ -->
  
 	 	<div class="result">
 	        <h2>Résultats</h2>
-	        <form class="select">
-	            <select>
-	                <option>Trier par...</option>
-	                <option>categorie</option>
-	                <option>disponibilité</option>
-	                <option>date d'ajout</option>
-	                <option>ordre alphabétique</option>
-	                <option>date de publication</option>
-	            </select>
-	            <select>
-	                <option>afficher 20 résultats</option>
-	                <option>afficher 40 résultats</option>
-	                <option>afficher 60 résultats</option>
-	            </select>
-	            <input type="submit" value ="afficher">
-	        </form>
+	      
 	        
 	        {# display navigation #}
 

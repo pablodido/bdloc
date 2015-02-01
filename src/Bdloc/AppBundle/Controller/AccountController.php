@@ -11,6 +11,8 @@ use Bdloc\AppBundle\Entity\User;
 use Bdloc\AppBundle\Entity\CreditCard;
 use Bdloc\AppBundle\Util\StringHelper;
 
+
+use Bdloc\AppBundle\Form\Handler\PaymentHandler;
 use Bdloc\AppBundle\Form\EditInfoType;
 use Bdloc\AppBundle\Form\EditPasswordType;
 
@@ -71,7 +73,7 @@ class AccountController extends Controller
             );
             
             // Redirection vers accueil compte
-            return $this->redirect( $this->generateUrl("bdloc_app_account_home") );
+            return $this->redirect( $this->generateUrl("account/home.html.twig") );
 
         }
 
@@ -140,7 +142,7 @@ class AccountController extends Controller
                     'Modification(s) prise(s) en compte !'
                 );
                 // Redirection vers accueil compte
-                return $this->redirect( $this->generateUrl("bdloc_app_account_home") );
+                return $this->redirect( $this->generateUrl("account/home.html.twig") );
             }
             else {
                 $this->get('session')->getFlashBag()->add(
@@ -196,7 +198,7 @@ class AccountController extends Controller
             //return $this->redirect( $this->generateUrl("bdloc_app_user_choosedropspot") );
             
             // Redirection vers étape 3, choix du paiement
-            return $this->redirect( $this->generateUrl("bdloc_app_account_home") );
+            return $this->redirect( $this->generateUrl("bdloc_app_payment_takesubscriptionpayment") );
 
         }
 
@@ -266,7 +268,7 @@ class AccountController extends Controller
     }
 
     /**
-     * @Route("/consulter-historique-location")
+     * @Route("/historique-location")
      */
     public function historyAction()
     {
